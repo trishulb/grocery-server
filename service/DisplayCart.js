@@ -11,21 +11,5 @@ module.exports = function() {
             res.status(201);
             res.json(question);
           });
-   
-         
 
-        // return  { items:[{
-        //       id:1,
-        //       name :'Sunflower Oils',
-        //       type : 'Weight',
-        //       volume : '1 kg'
-        //     },
-        //      {
-        //      id:2,
-        //      name : 'Eggs',
-        //      type : 'Quentity',
-        //      volume : '5'
-        //    }
-        //    ]
-        //  }
 };
