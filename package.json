@@ -1,0 +1,12 @@
+{
+    "name":"grocert-server",
+    "dependencies": {
+        "body-parser": "latest",
+        "express": "latest",
+        "mongoose": "latest"
+    },
+    "scripts": {
+        "dev": "nodemon",
+        "start": "node server.js"
+    }
+}

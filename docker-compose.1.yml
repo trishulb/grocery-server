@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+  nginx:
+    restart: always
+    build: 
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - '4000:4000'    
+  api:
+    build: 
+      dockerfile : Dockerfile
+      context : .
+    environment:
+      - MONGO_HOST=mongo
+    depends_on:
+      - mongo
+      volumes:
+      - /app/node_modules
+      - ./server:/app    
+  client:
+    build:
+      dockerfile : Dockerfile
+      context: ./client

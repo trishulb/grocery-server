@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+  api:
+    build: 
+      dockerfile : Dockerfile
+      context : .
+    environment:
+      - MONGO_HOST=mongo
+    ports:
+      - '8089:8089'
+    depends_on:
+      - mongo
+    links:
+      - mongo
